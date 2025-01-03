@@ -1,4 +1,4 @@
-package chess;
+package ch.heigvd.poo.chess;
 
 /**
  * Regroupe les méthodes appelées par la vue.

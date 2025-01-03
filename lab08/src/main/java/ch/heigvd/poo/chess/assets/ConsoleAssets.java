@@ -1,8 +1,8 @@
-package chess.assets;
+package ch.heigvd.poo.chess.assets;
 
-import chess.PieceType;
-import chess.PlayerColor;
-import chess.views.console.ConsoleView;
+import ch.heigvd.poo.chess.PieceType;
+import ch.heigvd.poo.chess.PlayerColor;
+import ch.heigvd.poo.chess.views.console.ConsoleView;
 
 public class ConsoleAssets {
 

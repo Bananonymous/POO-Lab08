@@ -1,8 +1,8 @@
-package chess.assets;
+package ch.heigvd.poo.chess.assets;
 
-import chess.PieceType;
-import chess.PlayerColor;
-import chess.views.gui.GUIView;
+import ch.heigvd.poo.chess.PieceType;
+import ch.heigvd.poo.chess.PlayerColor;
+import ch.heigvd.poo.chess.views.gui.GUIView;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

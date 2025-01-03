@@ -1,9 +1,9 @@
-package chess.views;
+package ch.heigvd.poo.chess.views;
 
-import chess.ChessController;
-import chess.ChessView;
-import chess.PieceType;
-import chess.PlayerColor;
+import ch.heigvd.poo.chess.ChessController;
+import ch.heigvd.poo.chess.ChessView;
+import ch.heigvd.poo.chess.PieceType;
+import ch.heigvd.poo.chess.PlayerColor;
 
 import java.util.HashMap;
 

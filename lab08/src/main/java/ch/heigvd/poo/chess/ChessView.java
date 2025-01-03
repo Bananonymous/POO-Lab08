@@ -1,4 +1,4 @@
-package chess;
+package ch.heigvd.poo.chess;
 
 /**
  * Méthodes fournies par les vues.

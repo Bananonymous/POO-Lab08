@@ -1,11 +1,11 @@
-package chess.views.gui;
+package ch.heigvd.poo.chess.views.gui;
 
-import chess.ChessController;
-import chess.PieceType;
-import chess.PlayerColor;
-import chess.assets.GuiAssets;
-import chess.views.BaseView;
-import chess.views.DrawableResource;
+import ch.heigvd.poo.chess.ChessController;
+import ch.heigvd.poo.chess.PieceType;
+import ch.heigvd.poo.chess.PlayerColor;
+import ch.heigvd.poo.chess.assets.GuiAssets;
+import ch.heigvd.poo.chess.views.BaseView;
+import ch.heigvd.poo.chess.views.DrawableResource;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;

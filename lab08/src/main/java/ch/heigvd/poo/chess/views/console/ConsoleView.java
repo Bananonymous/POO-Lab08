@@ -1,11 +1,11 @@
-package chess.views.console;
+package ch.heigvd.poo.chess.views.console;
 
-import chess.ChessController;
-import chess.PieceType;
-import chess.PlayerColor;
-import chess.assets.ConsoleAssets;
-import chess.views.BaseView;
-import chess.views.DrawableResource;
+import ch.heigvd.poo.chess.ChessController;
+import ch.heigvd.poo.chess.PieceType;
+import ch.heigvd.poo.chess.PlayerColor;
+import ch.heigvd.poo.chess.assets.ConsoleAssets;
+import ch.heigvd.poo.chess.views.BaseView;
+import ch.heigvd.poo.chess.views.DrawableResource;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
