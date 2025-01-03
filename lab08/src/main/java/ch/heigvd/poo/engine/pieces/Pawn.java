@@ -9,21 +9,47 @@ import ch.heigvd.poo.engine.listeners.BEventSrc;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * The Pawn class represents a pawn chess piece.
+ * It extends the Piece class and provides specific implementations for pawn movements,
+ * including en passant and promotion.
+ *
+ * @author : Surbeck Léon
+ * @author : Nicolet Victor
+ */
 public class Pawn extends Piece {
     private boolean hasMoved = false;
     private final BEventSrc events = new BEventSrc() {
     };
     private boolean canEnPassant = false;
 
+    /**
+     * Constructs a Pawn with the specified color, initial cell, and observer.
+     *
+     * @param color    the color of the pawn
+     * @param cell     the initial cell of the pawn
+     * @param observer the observer to attach for event notifications
+     */
     public Pawn(PlayerColor color, GCell cell, BObserver observer) {
         super(PieceType.PAWN, color, cell);
         events.attach(observer);
     }
 
+    /**
+     * Returns whether the pawn has moved.
+     *
+     * @return true if the pawn has moved, false otherwise
+     */
     public boolean getHasMoved() {
         return hasMoved;
     }
 
+    /**
+     * Checks if the pawn can perform an en passant move to the specified cell.
+     *
+     * @param to the cell to move to
+     * @return true if the pawn can perform an en passant move, false otherwise
+     */
     public boolean checkEnPassant(GCell to) {
         int distanceRow = cell.distanceRow(to);
         int distanceCol = cell.distanceCol(to);
@@ -43,14 +69,29 @@ public class Pawn extends Piece {
         return false;
     }
 
+    /**
+     * Returns whether the pawn can perform an en passant move.
+     *
+     * @return true if the pawn can perform an en passant move, false otherwise
+     */
     public boolean getCanEnPassant() {
         return canEnPassant;
     }
 
+    /**
+     * Updates the en passant state of the pawn based on the distance moved.
+     *
+     * @param dis the distance moved
+     */
     public void updateCanEnPassant(int dis) {
         canEnPassant = !hasMoved && dis == 2;
     }
 
+    /**
+     * Checks if the pawn can be promoted when moving to the specified cell.
+     *
+     * @param to the cell to move to
+     */
     public void checkPromoted(GCell to) {
         if (to.getRow() == 0 || to.getRow() == 7) {
             Piece pieceTo = events.notifyPieceTo(this, to);
@@ -60,6 +101,12 @@ public class Pawn extends Piece {
         }
     }
 
+    /**
+     * Returns the path of cells the pawn will move through to reach the specified cell.
+     *
+     * @param to the destination cell
+     * @return a list of cells representing the path to the destination cell
+     */
     @Override
     public List<GCell> path(GCell to) {
         List<GCell> path = new LinkedList<>();
@@ -70,6 +117,12 @@ public class Pawn extends Piece {
         return path;
     }
 
+    /**
+     * Checks if the pawn can move to the specified cell.
+     *
+     * @param to the cell to move to
+     * @return true if the pawn can move to the specified cell, false otherwise
+     */
     @Override
     public boolean canMove(GCell to) {
         super.canMove(to);
