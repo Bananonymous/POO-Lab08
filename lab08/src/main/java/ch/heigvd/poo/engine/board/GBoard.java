@@ -1,10 +1,10 @@
 package ch.heigvd.poo.engine.board;
 
-import chess.PlayerColor;
-import engine.listeners.EngineObserver;
-import engine.listeners.EngineEventsSource;
-import engine.listeners.BoardObserver;
-import engine.pieces.*;
+import ch.heigvd.poo.chess.PlayerColor;
+import ch.heigvd.poo.engine.listeners.EObserver;
+import ch.heigvd.poo.engine.listeners.EEventSrc;
+import ch.heigvd.poo.engine.listeners.BObserver;
+import ch.heigvd.poo.engine.pieces.*;
 
-public class GBoard implements BoardObserver {
+public class GBoard implements BObserver {
 }
