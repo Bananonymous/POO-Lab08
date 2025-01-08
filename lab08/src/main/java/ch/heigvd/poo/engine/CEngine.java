@@ -97,6 +97,7 @@ public class CEngine implements ChessController, EObserver  {
         board.clearBoard();
         turn = 0;
         displayMessage();
+        board.initBoard();
     }
 
     /**

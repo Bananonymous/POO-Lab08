@@ -6,6 +6,7 @@ import ch.heigvd.poo.chess.views.gui.GUIView;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 public class GuiAssets {
@@ -35,6 +36,9 @@ public class GuiAssets {
   }
 
   private static BufferedImage assetsImage(String imageName) throws IOException {
-    return ImageIO.read(GuiAssets.class.getResource("images/" + imageName));
+//    File temp = new File("/home/athena/Insync/POO/POO-Lab08/lab08/src/main/java/ch/heigvd/poo/chess/assets/images/" + imageName);
+//    System.out.println(temp);
+    return ImageIO.read(new File("/home/athena/Insync/POO/POO-Lab08/lab08/src/main/java/ch/heigvd/poo/chess/assets/images/" + imageName));
+//    return ImageIO.read(GuiAssets.class.getResource("images/" + imageName));
   }
 }

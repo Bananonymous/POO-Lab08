@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         ChessController controller = new CEngine();
         ChessView view = new GUIView(controller);
+//        ChessView view = new ConsoleView(controller);
         controller.start(view);
     }
 }
