@@ -38,7 +38,7 @@ public class GuiAssets {
   private static BufferedImage assetsImage(String imageName) throws IOException {
 //    File temp = new File("/home/athena/Insync/POO/POO-Lab08/lab08/src/main/java/ch/heigvd/poo/chess/assets/images/" + imageName);
 //    System.out.println(temp);
-    return ImageIO.read(new File("/home/athena/Insync/POO/POO-Lab08/lab08/src/main/java/ch/heigvd/poo/chess/assets/images/" + imageName));
+    return ImageIO.read(new File("/home/boletellus/heig-vd/poo/labo/POO-Lab08/lab08/src/main/java/ch/heigvd/poo/chess/assets/images/" + imageName));
 //    return ImageIO.read(GuiAssets.class.getResource("images/" + imageName));
   }
 }
