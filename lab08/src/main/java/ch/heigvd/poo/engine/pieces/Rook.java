@@ -54,10 +54,7 @@ public class Rook extends Piece {
     @Override
     public boolean canMove(GCell to) {
         if (super.canMove(to)) {
-            if (to.getRow() == cell.getRow() || to.getCol() == cell.getCol()) {
-                hasMoved = true;
-                return true;
-            }
+            return to.getRow() == cell.getRow() || to.getCol() == cell.getCol();
         }
         return false;
     }
@@ -75,15 +72,18 @@ public class Rook extends Piece {
         int distanceRow = cell.distanceRow(to);
         int distanceCol = cell.distanceCol(to);
 
-        if (distanceRow == 0) {
-            for (int i = 1; i < distanceCol; i++) {
+        if (distanceCol == 0) {
+            for (int i = 1; i < distanceRow; i++) {
                 path.add(new GCell(cell.getRow(), cell.getCol() + i * cell.directionCol(to)));
             }
-        } else if (distanceCol == 0) {
-            for (int i = 1; i < distanceRow; i++) {
+        } else if (distanceRow == 0) {
+            for (int i = 1; i < distanceCol; i++) {
                 path.add(new GCell(cell.getRow() + i * cell.directionRow(to), cell.getCol()));
             }
         }
+
+        if (!path.isEmpty())
+            hasMoved = true;
         return path;
     }
 }

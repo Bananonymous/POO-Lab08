@@ -35,8 +35,9 @@ public class Bishop extends Piece {
      */
     @Override
     public boolean canMove(GCell to) {
-        super.canMove(to);
-        return cell.directionRow(to) == cell.distanceCol(to);
+        if (super.canMove(to))
+            return cell.distanceRow(to) == cell.distanceCol(to);
+        return false;
     }
 
     /**
@@ -53,9 +54,9 @@ public class Bishop extends Piece {
         int rowDirection = cell.directionRow(to);
         int colDirection = cell.directionCol(to);
 
-        int rowDistance = cell.distanceRow(to);
+        int colDistance = cell.distanceCol(to);
 
-        for (int i = 1; i < rowDistance; i++)
+        for (int i = 1; i < colDistance; i++)
             path.add(new GCell(cell.getRow() + i * rowDirection, cell.getCol() + i * colDirection));
 
         return path;
