@@ -10,8 +10,8 @@ skinparam classAttributeIconSize 0
 skinparam linetype polyline
 
 ' Additions
-GBoard "1"-u->"2..32" Piece: has
-Piece "1" --> "0..1" GCell : is ob
+GBoard "1"-->"2..32" Piece: has
+Piece "1" --> "0..1" GCell : is on
 GCell "64" --> "1" GBoard : belongs to
 ' REMOVE
 

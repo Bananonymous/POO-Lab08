@@ -14,6 +14,10 @@ La classe `ChessController` joue le rôle principal dans la gestion des interact
     - `handleMove(int startX, int startY, int endX, int endY)`: gère les mouvements des pièces sur l'échiquier.
     - `resetGame()`: réinitialise le jeu.
 
+### **Diagramme UML**
+
+![CTP](./diagram-0.png)
+
 ### **Décisions Architecturales**
 
 - **Modularité** : Sépare la logique du jeu de l'interface utilisateur pour une meilleure maintenabilité.
