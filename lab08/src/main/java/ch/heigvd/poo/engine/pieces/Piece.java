@@ -40,8 +40,7 @@ abstract public class Piece implements ChessView.UserChoice {
      * @return true if the piece can move to the target cell, false otherwise
      */
     public boolean canMove(GCell to) {
-        if (to.equals(this.cell))
-            return false;
+        if (to.equals(this.cell)) return false;
 
         return to.getRow() < 8 && to.getCol() < 8;
     }
@@ -79,7 +78,7 @@ abstract public class Piece implements ChessView.UserChoice {
      * @param cell the new position of the piece
      */
     public void setCell(GCell cell) {
-        this.cell = cell;
+        this.cell = new GCell(cell.getRow(), cell.getCol());
     }
 
     /**
@@ -115,11 +114,7 @@ abstract public class Piece implements ChessView.UserChoice {
      */
     @Override
     public String toString() {
-        return "Piece{" +
-                "type=" + type +
-                ", color=" + color +
-                ", cell=" + cell +
-                '}';
+        return "Piece{" + "type=" + type + ", color=" + color + ", cell=" + cell + '}';
     }
 
     /**
@@ -130,12 +125,7 @@ abstract public class Piece implements ChessView.UserChoice {
      */
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Piece piece = (Piece) o;
-        return type == piece.type &&
-                color == piece.color &&
-                Objects.equals(cell, piece.cell);
+        return o == this || o != null && o.getClass() == getClass() && ((Piece) o).cell == cell && ((Piece) o).type == type && ((Piece) o).color == color;
     }
 
     /**

@@ -49,17 +49,14 @@ public class Bishop extends Piece {
     @Override
     public List<GCell> path(GCell to) {
         List<GCell> path = new LinkedList<>();
-        int distanceRow = cell.distanceRow(to);
-        int distanceCol = cell.distanceCol(to);
 
-        // Check if the movement is diagonal (distanceRow must equal distanceCol)
-        if (distanceRow == distanceCol) {
-            for (int i = 1; i < distanceRow; ++i) {
-                int row = cell.getRow() + i * cell.directionRow(to);
-                int col = cell.getCol() + i * cell.directionCol(to);
-                path.add(new GCell(row, col));
-            }
-        }
+        int rowDirection = cell.directionRow(to);
+        int colDirection = cell.directionCol(to);
+
+        int rowDistance = cell.distanceRow(to);
+
+        for (int i = 1; i < rowDistance; i++)
+            path.add(new GCell(cell.getRow() + i * rowDirection, cell.getCol() + i * colDirection));
 
         return path;
     }

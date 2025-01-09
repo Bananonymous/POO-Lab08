@@ -93,7 +93,7 @@ public class Pawn extends Piece {
      * @param to the cell to move to
      */
     public void checkPromoted(GCell to) {
-        if (to.getRow() == 0 || to.getRow() == 7) {
+        if (to.getCol() == 0 || to.getCol() == 7) {
             Piece pieceTo = events.notifyPieceTo(this, to);
 
             if (pieceTo == null || pieceTo.getType() != PieceType.KING)
